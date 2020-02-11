@@ -107,10 +107,12 @@ firewalld:
         are accepted.
       services:
         - http
-        - zabbixcustom
         - https
         - ssh
         - salt-minion
+      # Anything in zone definition ending with services will get merged into services
+      other_services:
+        - zabbixcustom
       protocols:
         - igmp
       rich_rules:
