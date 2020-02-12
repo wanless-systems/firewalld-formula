@@ -33,11 +33,13 @@
     {%- endif %}
   {%- endfor %}
 {%- endif %}
-{%- if 'services' in zone %}
-  {%- for v in zone.services %}
+{%- for k,val in zone.items() %}
+  {%- if k.endswith("services") %}
+    {%- for v in val %}
   <service name="{{ v }}" />
-  {%- endfor %}
-{%- endif %}
+    {%- endfor %}
+  {%- endif %}
+{%- endfor %}
 {%- if 'ports' in zone %}
   {%- for v in zone.ports %}
     {%- if 'comment' in v %}
