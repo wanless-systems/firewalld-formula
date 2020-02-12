@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.9.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.8.0...v0.9.0>`_ (2020-02-12)
+-----------------------------------------------------------------------------------------------------------
+
+Features
+^^^^^^^^
+
+
+* **zone.xml:** allow more services definition inside zone (\ `8d0172f <https://github.com/saltstack-formulas/firewalld-formula/commit/8d0172f5c7e0e1a2856dbbc0bf149ee8ddfd225a>`_\ )
+
 `0.8.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.7.0...v0.8.0>`_ (2020-02-12)
 -----------------------------------------------------------------------------------------------------------
 
