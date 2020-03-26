@@ -83,8 +83,7 @@
   {%- endfor %}
 {%- endif %}
 
-{%- if 'rich_rules' in zone %}
-  {%- for rule in zone.rich_rules %}
+{%- macro rich_rule(rule) -%}
   {%- if 'family' in rule %}
   <rule family="{{ rule.family }}">
   {%- else %}
@@ -149,6 +148,42 @@
     <drop/>
   {%- endif %}    
   </rule>
+{%- endmacro %}
+
+{%- if 'rich_rules' in zone %}
+  {%- if zone.rich_rules is list %}
+    {%- set rich_rules = zone.rich_rules %}
+  {%- else %}
+    {%- set expanded_ipset_rules = [] %}
+    {%- for name,rule in zone.rich_rules|dictsort %}
+      {%- if 'ipsets' in rule %}
+        {%- for ipset in rule.ipsets %}
+          {%- set tmp_rule = {} %}
+          {%- set _dummy = tmp_rule.update(rule) %}
+          {%- set _dummy = tmp_rule.update({'ipset':{'name':ipset}}) %}
+          {%- set _dummy = expanded_ipset_rules.append(tmp_rule) %}
+        {%- endfor %}
+      {%- else %}
+        {%- set _dummy = expanded_ipset_rules.append(rule) %}
+      {%- endif %}
+    {%- endfor %}
+    {%- set rich_rules = [] %}
+    {%- for rule in expanded_ipset_rules %}
+      {%- if 'services' in rule %}
+        {%- for service in rule.services %}
+          {%- set tmp_rule = {} %}
+          {%- set _dummy = tmp_rule.update(rule) %}
+          {%- set _dummy = tmp_rule.update({'service':service}) %}
+          {%- set _dummy = rich_rules.append(tmp_rule) %}
+        {%- endfor %}
+      {%- else %}
+        {%- set _dummy = rich_rules.append(rule) %}
+      {%- endif %}
+    {%- endfor %}
+  {%- endif %}
+  {%- for rule in rich_rules %}
+{{ rich_rule(rule) }}
   {%- endfor %}
 {%- endif %}
+
 </zone>
