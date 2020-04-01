@@ -9,65 +9,65 @@
   <rule family="{{ rule.family }}">
   {%- else %}
   <rule>
-  {%- endif %}    
+  {%- endif %}
   {%- if 'ipset' in rule %}
     <source ipset="{{ rule.ipset.name }}" />
   {%- endif %}
   {%- if 'source' in rule %}
     <source address="{{ rule.source.address }}" {%- if 'invert' in rule.source %}invert="{{ rule.source.invert }}"{%- endif %} />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'destination' in rule %}
     <destination address="{{ rule.destination.address }}" {%- if 'invert' in rule.destination %}invert="{{ rule.destination.invert }}"{%- endif %} />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'service' in rule %}
     <service name="{{ rule.service }}" />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'port' in rule %}
     <port port="{{ rule.port.portid }}" protocol="{{ rule.port.protocol }}" />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'protocol' in rule %}
     <protocol value="{{ rule.protocol }}" />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'icmp_block' in rule %}
     <icmp-block name="{{ rule.icmp_block }}" />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'icmp_type' in rule %}
     <icmp-type name="{{ rule.icmp_type }}" />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'masquerade' in rule %}
     {%- if rule.masquerade %}<masquerade/>{%- endif %}
-  {%- endif %}    
+  {%- endif %}
   {%- if 'forward_port' in rule %}
     {%- if 'comment' in rule.forward_port %}
       <!-- {{ rule.forward_port.comment }} -->
     {%- endif %}
     <forward-port port="{{ rule.forward_port.portid }}" protocol="{{ rule.forward_port.protocol }}"{%- if 'to_port' in rule.forward_port %} to-port="{{ rule.forward_port.to_port }}"{%- endif %}{%- if 'to_addr' in rule.forward_port %} to-addr="{{ rule.forward_port.to_addr }}"{%- endif %} />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'source_port' in rule %}
     {%- if 'comment' in rule.source_port %}
       <!-- {{ rule.source_port.comment }} -->
     {%- endif %}
     <source-port port="{{ rule.source_port.portid }}" protocol="{{ rule.source_port.protocol }}"{%- if 'to_port' in rule.source_port %} to-port="{{ rule.source_port.to_port }}"{%- endif %}{%- if 'to_addr' in rule.source_port %} to-addr="{{ rule.source_port.to_addr }}"{%- endif %} />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'log' in rule %}
     <log{%- if 'prefix' in rule.log %} prefix="{{ rule.log.prefix }}"{%- endif %}{%- if 'level' in rule.log %} level="{{ rule.log.level }}"{%- endif %}>
     {%- if 'limit' in rule.log %}
       <limit value="{{ rule.log.limit }}"/>
     {%- endif %}
     </log>
-  {%- endif %}    
+  {%- endif %}
   {%- if 'audit' in rule %}
     <audit>{%- if 'limit' in rule.audit %} <limit value="{{ rule.audit.limit }}"/>{%- endif %}</audit>
-  {%- endif %}    
+  {%- endif %}
   {%- if 'accept' in rule %}
     <accept/>
   {%- endif %}
   {%- if 'reject' in rule %}
     <reject{%- if 'type' in rule.reject %} type="{{ rule.reject.type }}"{%- endif %} />
-  {%- endif %}    
+  {%- endif %}
   {%- if 'drop' in rule %}
     <drop/>
-  {%- endif %}    
+  {%- endif %}
   </rule>
 {%- endmacro %}
 <zone{%- if 'target' in zone %} target="{{ zone.target }}"{%- endif %}>
