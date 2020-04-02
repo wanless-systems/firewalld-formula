@@ -151,6 +151,21 @@ firewalld:
           port: 4444
           protocol: tcp
 
+    rich_public:
+      short: rich_public
+      description: "Example"
+      # Rich rules can be specified as a dictionary. All keys from standard rich rules
+      # can be used. Special keys "ipsets" and "services", if defined, take precedence.
+      # They will be auto-expanded into separate rich rules per value in the list.
+      rich_rules:
+        ssh-csg:
+          accept: true
+          ipsets:
+            - fail2ban-ssh
+            - other-ipset
+          services:
+            - ssh
+
   direct:
     chain:
       MYCHAIN:
