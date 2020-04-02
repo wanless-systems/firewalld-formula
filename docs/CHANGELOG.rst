@@ -2,6 +2,33 @@
 Changelog
 =========
 
+`0.10.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.9.0...v0.10.0>`_ (2020-04-02)
+-------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **zone.xml:** adjust whitespacing to pass tests & macro at top of file (\ `d8f0f47 <https://github.com/saltstack-formulas/firewalld-formula/commit/d8f0f47a5408bde763050c457269ef129a48b050>`_\ )
+
+Features
+^^^^^^^^
+
+
+* allow rich_rules to be specified as a dict (\ `cd4cec0 <https://github.com/saltstack-formulas/firewalld-formula/commit/cd4cec008983943213ac3bb721ab69c3a5214c54>`_\ )
+
+Styles
+^^^^^^
+
+
+* **zone.xml:** remove all trailing whitespaces (\ `204efe5 <https://github.com/saltstack-formulas/firewalld-formula/commit/204efe5fc7065a2c2f4f55aa0138bf98675cba4e>`_\ )
+
+Tests
+^^^^^
+
+
+* **zones_spec:** check content of rendered zone files (\ `6ebfc6f <https://github.com/saltstack-formulas/firewalld-formula/commit/6ebfc6f20cfd72c2785514ab35484c9575401648>`_\ )
+
 `0.9.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.8.0...v0.9.0>`_ (2020-02-12)
 -----------------------------------------------------------------------------------------------------------
 
