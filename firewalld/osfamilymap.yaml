@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+# # vim: ft=yaml
+# os_family defaults
+# only add key:values here that differ from whats in defaults.yaml
+---
+Debian:
+  firewalld: {}
+RedHat:
+  firewalld: {}
+Arch:
+  firewalld: {}
+Suse:
+  firewalld: {}
