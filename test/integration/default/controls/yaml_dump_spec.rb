@@ -11,6 +11,7 @@ control 'firewalld `map.jinja` YAML dump' do
     IndividualCalls: 'no'
     LogDenied: 'off'
     RFC3964_IPv4: 'yes'
+    arch: amd64
     backend:
       manage: true
       pkg: nftables
