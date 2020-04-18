@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/saltstack-formulas/firewalld-formula/compare/v0.10.0...v0.10.1) (2020-04-18)
+
+
+### Tests
+
+* verify map output using `yaml_dump` ([69df9a6](https://github.com/saltstack-formulas/firewalld-formula/commit/69df9a62d6e12377b9a516e7454e75b49b0bffae))
+
 # [0.10.0](https://github.com/saltstack-formulas/firewalld-formula/compare/v0.9.0...v0.10.0) (2020-04-02)
 
 
