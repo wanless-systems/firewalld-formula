@@ -160,6 +160,7 @@ suites:
       state_top:
         base:
           '*':
+            - firewalld.yaml_dump
             - firewalld
       pillars:
         top.sls:
