@@ -2,6 +2,34 @@
 Changelog
 =========
 
+`1.0.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.10.1...v1.0.0>`_ (2020-04-18)
+------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* do not error on unknown os_family grain (\ `94d2b0b <https://github.com/saltstack-formulas/firewalld-formula/commit/94d2b0b97c242174c6f1c08cb2da2d2d03d98bd4>`_\ )
+
+Code Refactoring
+^^^^^^^^^^^^^^^^
+
+
+* split default maps into separate files (\ `afcf5e7 <https://github.com/saltstack-formulas/firewalld-formula/commit/afcf5e770085565b11c25e9af522b194bd67fc30>`_\ )
+
+Tests
+^^^^^
+
+
+* **yaml_dump_spec:** update after splitting ``map.jinja`` (\ `d1f7a37 <https://github.com/saltstack-formulas/firewalld-formula/commit/d1f7a3717184bc22fde6e04d8672fcce0a462c4b>`_\ )
+
+BREAKING CHANGES
+^^^^^^^^^^^^^^^^
+
+
+* ``map.jinja`` has been upgraded from using ``pillar.get``
+  to ``config.get``.
+
 `0.10.1 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.10.0...v0.10.1>`_ (2020-04-18)
 --------------------------------------------------------------------------------------------------------------
 
