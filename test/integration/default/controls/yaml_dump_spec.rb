@@ -5,6 +5,7 @@ control 'firewalld `map.jinja` YAML dump' do
 
   yaml_dump = "---\n"
   yaml_dump += <<~YAML_DUMP.chomp
+    AllowZoneDrifting: 'no'
     AutomaticHelpers: system
     FirewallBackend: nftables
     FlushAllOnReload: 'yes'
