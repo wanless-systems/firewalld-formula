@@ -2,6 +2,28 @@
 Changelog
 =========
 
+`1.1.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.0.0...v1.1.0>`_ (2020-10-24)
+-----------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gemfile.lock:** add to repo with updated ``Gemfile`` [skip ci] (\ `7a964e4 <https://github.com/saltstack-formulas/firewalld-formula/commit/7a964e4738f0d7e3745da3b1f97a3407ca134381>`_\ )
+* **kitchen:** use ``saltimages`` Docker Hub where available [skip ci] (\ `a33cd64 <https://github.com/saltstack-formulas/firewalld-formula/commit/a33cd641e248d0640dce3719836f5d4a0ff739e8>`_\ )
+* **kitchen+travis:** remove ``master-py2-arch-base-latest`` [skip ci] (\ `24e115c <https://github.com/saltstack-formulas/firewalld-formula/commit/24e115cacb52e4a8a51fd92465e4442d6a68d1d3>`_\ )
+* **pre-commit:** add to formula [skip ci] (\ `9254027 <https://github.com/saltstack-formulas/firewalld-formula/commit/92540273969100880c55ad041c2e450deefef101>`_\ )
+* **pre-commit:** enable/disable ``rstcheck`` as relevant [skip ci] (\ `c7e4dee <https://github.com/saltstack-formulas/firewalld-formula/commit/c7e4dee62a9a9a8f57cacde4b7d5c23ab9d36156>`_\ )
+* **pre-commit:** finalise ``rstcheck`` configuration [skip ci] (\ `118eacf <https://github.com/saltstack-formulas/firewalld-formula/commit/118eacff459289ae21fd5cd630857b306f817ce9>`_\ )
+* **travis:** add notifications => zulip [skip ci] (\ `b6c60b2 <https://github.com/saltstack-formulas/firewalld-formula/commit/b6c60b27b9b37ab73a859bfac31f64df84046641>`_\ )
+* **workflows/commitlint:** add to repo [skip ci] (\ `93853b6 <https://github.com/saltstack-formulas/firewalld-formula/commit/93853b643f23e77f00a642d8f12b3da8b322ee8b>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **firewalld.conf:** support configuration of ``AllowZoneDrifting`` (\ `0ff53ff <https://github.com/saltstack-formulas/firewalld-formula/commit/0ff53ffb2790ab95b71d3df461a04bca8f02a520>`_\ ), closes `#44 <https://github.com/saltstack-formulas/firewalld-formula/issues/44>`_
+
 `1.0.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v0.10.1...v1.0.0>`_ (2020-04-18)
 ------------------------------------------------------------------------------------------------------------
 
